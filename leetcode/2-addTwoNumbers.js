@@ -3,33 +3,34 @@
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
   }
+//THIS WAS MY FIRST THOUGHT ON HOW TO SOLVE THIS PROBLEM, BUT TURNS OUT WRONG
+//HAD TO READJUST TO FOLLOWING SOLUTION
+// var addTwoNumbers1 = function(l1, l2) {
+//   let first = String(l1.val)
+//   let second = String(l2.val)
+//   while (l1.next) {
+//     l1 = l1.next
+//     first += String(l1.val)
+//   }
+//   while (l2.next) {
+//     l2 = l2.next
+//     second += String(l2.val)
+//   }
+//   first = first.split('').reverse().join('')
+//   second = second.split('').reverse().join('')
+//   let sum = Number(first) + Number(second)
+//   console.log(sum)
+//   sum = String(sum).split('').reverse().join('')
 
-var addTwoNumbers1 = function(l1, l2) {
-  let first = String(l1.val)
-  let second = String(l2.val)
-  while (l1.next) {
-    l1 = l1.next
-    first += String(l1.val)
-  }
-  while (l2.next) {
-    l2 = l2.next
-    second += String(l2.val)
-  }
-  first = first.split('').reverse().join('')
-  second = second.split('').reverse().join('')
-  let sum = Number(first) + Number(second)
-  console.log(sum)
-  sum = String(sum).split('').reverse().join('')
+//   let result = new ListNode(Number(sum[0]))
+//   let tail = result
+//   for (let i = 1; i < sum.length; i++) {
+//     tail.next = new ListNode(Number(sum[i]))
+//     tail = tail.next
+//   }
 
-  let result = new ListNode(Number(sum[0]))
-  let tail = result
-  for (let i = 1; i < sum.length; i++) {
-    tail.next = new ListNode(Number(sum[i]))
-    tail = tail.next
-  }
-
-  return second
-};
+//   return second
+// };
 
 var addTwoNumbers = function(l1, l2) {
   const result = new ListNode((l1.val + l2.val) % 10)
@@ -58,6 +59,9 @@ var addTwoNumbers = function(l1, l2) {
   return result
 };
 
+
+
+//tests to see if my solution works
 function conversion(arr) {
   let result = new ListNode(arr[0])
   let tail = result
